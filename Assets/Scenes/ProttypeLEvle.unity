@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 98105246}
   m_Layer: 5
   m_Name: DownArrow
-  m_TagString: Untagged
+  m_TagString: dPad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -759,9 +759,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c0c2bcdbc7053543971e6c2e7a3ff9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 7776909824268147668, guid: a69579e90a3e3ec4e8d96bf610413c61, type: 3}
   aim: {fileID: 1089884501}
-  bullet: {fileID: 1933432244502317078, guid: a69579e90a3e3ec4e8d96bf610413c61, type: 3}
-  dPad: {fileID: 1496250099}
 --- !u!1 &600013439
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +775,7 @@ GameObject:
   - component: {fileID: 600013441}
   m_Layer: 5
   m_Name: LeftArrow
-  m_TagString: Untagged
+  m_TagString: dPad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1008,7 +1007,7 @@ GameObject:
   - component: {fileID: 626028136}
   m_Layer: 5
   m_Name: UpArrow
-  m_TagString: Untagged
+  m_TagString: dPad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1136,7 +1135,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1089884503}
   - component: {fileID: 1089884502}
-  - component: {fileID: 1089884504}
   m_Layer: 0
   m_Name: Aim
   m_TagString: Untagged
@@ -1209,20 +1207,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1089884504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1089884501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad8ee646ae24fdb4b955aede38fe4422, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wlrdPOS: {x: 0, y: 0}
-  cam: {fileID: 163478864}
 --- !u!1 &1132094791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,6 +1544,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1496250100}
+  - component: {fileID: 1496250101}
   m_Layer: 5
   m_Name: dPad
   m_TagString: Untagged
@@ -1590,6 +1575,18 @@ RectTransform:
   m_AnchoredPosition: {x: 181, y: 168}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1496250101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496250099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96e420eb69c758c408d0f2630d059cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1505467599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,7 +1635,7 @@ GameObject:
   - component: {fileID: 1538269746}
   m_Layer: 5
   m_Name: RightArrow
-  m_TagString: Untagged
+  m_TagString: dPad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
