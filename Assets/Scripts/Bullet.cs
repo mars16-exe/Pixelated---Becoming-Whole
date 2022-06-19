@@ -14,15 +14,20 @@ public class Bullet : MonoBehaviour
     {
         rbBODY = GetComponent<Rigidbody2D>();
         focalPoint = GameObject.Find("focalPoint");
+        
         rbBODY.velocity = focalPoint.transform.forward * power * Time.deltaTime;
         //BulletSound()
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
-
+        DestroyBullet();
         //BulletEffect()
+    }
+
+    void DestroyBullet()
+    {
+        Destroy(transform.parent.gameObject);
     }
 
 

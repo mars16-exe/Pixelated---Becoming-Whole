@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    public GameObject aim;
     public GameObject bullet;
+    public GameObject aim;
 
     void Start()
     {
@@ -22,9 +22,14 @@ public class PlayerShoot : MonoBehaviour
 
         if(Input.GetButtonUp("Fire1"))
         {
-            Instantiate(bullet, transform.position, Quaternion.identity);
+            Shoot();
             Time.timeScale = 1.0f;
             aim.gameObject.SetActive(false);
         }
+    }
+
+    private void Shoot()
+    {
+        Instantiate(bullet, (Vector2)focalPoint.Instance.transform.position, focalPoint.Instance.transform.rotation);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class focalPoint : MonoBehaviour
+public class focalPoint : Singleton<focalPoint>
 {
     public GameObject aim;
 

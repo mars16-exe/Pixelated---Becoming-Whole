@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Aim : MonoBehaviour
+public class Aim : Singleton<Aim>
 {
-
-    Vector2 wlrdPOS;
+    public Vector2 wlrdPOS;
     public Camera cam;
 
     private void Awake()
