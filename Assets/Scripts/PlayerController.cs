@@ -39,14 +39,6 @@ public class PlayerController : MonoBehaviour
     {
         verticalInput = 0f;
         horizontalInput = value;
-
-        //if(horizontalInput != value)
-        //{
-        //}
-        //else
-        //{
-        //    horizontalInput = 0f;
-        //}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -56,7 +48,6 @@ public class PlayerController : MonoBehaviour
             verticalInput = 0f;
             horizontalInput = 0f;
             rigidBody.velocity = Vector2.zero;
-
         }
     }
 }

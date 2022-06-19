@@ -8,6 +8,10 @@ public class Aim : MonoBehaviour
     Vector2 wlrdPOS;
     public Camera cam;
 
+    private void Awake()
+    {
+        cam = Camera.main;
+    }
     // Update is called once per frame
     void Update()
     {
