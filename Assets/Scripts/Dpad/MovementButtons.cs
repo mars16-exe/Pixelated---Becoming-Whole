@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class MovementButtons : Singleton<MovementButtons>
+public class MovementButtons : MonoBehaviour
 {
-    public Button up, down, right, left;
-    // Start is called before the first frame update
-    void Awake()
+    public void mouseYES()
     {
-        up = transform.GetChild(0).GetComponent<Button>();
-        down = transform.GetChild(1).GetComponent<Button>();
-        right = transform.GetChild(2).GetComponent<Button>();
-        left = transform.GetChild(3).GetComponent<Button>();
+        PlayerShoot.Instance.mouseOnUI = true;
+        Invoke("mouseNO", 0.1f);
+    }
+    public void mouseNO()
+    {
+        PlayerShoot.Instance.mouseOnUI = false;
+
     }
 }

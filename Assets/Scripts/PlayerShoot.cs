@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PlayerShoot : MonoBehaviour
+public class PlayerShoot : Singleton<PlayerShoot>
 {
     public GameObject bullet;
     public GameObject aim;
 
     private Camera cam;
+
+    public bool mouseOnUI;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
         Aiming();
+        //MouseInput();
     }
 
     private void Shoot()
@@ -34,36 +36,45 @@ public class PlayerShoot : MonoBehaviour
             Vector2 aimPosition = cam.ScreenToWorldPoint(touch.position);
             aim.transform.position = aimPosition;
             
-            if(touch.phase == TouchPhase.Began)
+            if(touch.phase == TouchPhase.Began && !mouseOnUI)
             {
-                Time.timeScale = 0.3f;
-                aim.gameObject.SetActive(true);
+                sloMo();
             }
-            else if(touch.phase == TouchPhase.Ended)
+            else if(touch.phase == TouchPhase.Ended && !mouseOnUI)
             {
                 Shoot();
-                Time.timeScale = 1.0f;
-                aim.gameObject.SetActive(false);
+                NotsloMo();
             }
         }
     }
 
-    //private void Clicking()                       //for MOUSE
-    //{
-    //    if (Input.GetButtonDown("Fire1"))
-    //    {
-    //        Time.timeScale = 0.3f;
-    //        aim.gameObject.SetActive(true);
-    //    }
-    //}
+    private void MouseInput()                       //for MOUSE
+    {
+        Vector2 mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+        aim.transform.position = mousePosition;
 
-    //private void Releasing()                      //For MOUSE
-    //{
-    //    if (Input.GetButtonUp("Fire1"))
-    //    {
-    //        Shoot();
-    //        Time.timeScale = 1.0f;
-    //        aim.gameObject.SetActive(false);
-    //    }
-    //}
+        if (Input.GetButtonDown("Fire1") && !mouseOnUI)
+        {
+            sloMo();
+        }
+        else if (Input.GetButtonUp("Fire1") && !mouseOnUI)
+        {
+
+            Shoot();
+            NotsloMo();
+        }
+    }
+
+    private void sloMo()
+    {
+        Time.timeScale = 0.3f;
+        aim.gameObject.SetActive(true);
+    }
+    private void NotsloMo()
+    {
+        Time.timeScale = 1.0f;
+        aim.gameObject.SetActive(false);
+    }
+
+
 }
