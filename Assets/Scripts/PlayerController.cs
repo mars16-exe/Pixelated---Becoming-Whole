@@ -31,12 +31,16 @@ public class PlayerController : MonoBehaviour
     }
     public void upORdown(int value)    //setting Vertical Input
     {
+        rigidBody.velocity = Vector2.zero;
+
         horizontalInput = 0f;
         verticalInput = value;
     }
 
     public void rightORleft(int value)  //setting Horizontal Input
     {
+        rigidBody.velocity = Vector2.zero;
+
         verticalInput = 0f;
         horizontalInput = value;
     }
