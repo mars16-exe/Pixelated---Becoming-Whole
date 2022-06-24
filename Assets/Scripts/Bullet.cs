@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public GameObject focalPoint;
-    private float damage = 20f;
-    public float Damage
+    [SerializeField] private int damage = 60;
+    public int Damage
     {
         get { return damage; }
         private set {}
@@ -19,9 +18,8 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         rbBODY = GetComponent<Rigidbody2D>();
-        focalPoint = GameObject.Find("focalPoint");
         
-        rbBODY.velocity = focalPoint.transform.forward.normalized * power * Time.deltaTime;
+        rbBODY.velocity = focalPoint.Instance.transform.forward.normalized * power * Time.deltaTime;
         //BulletSound()
     }
 

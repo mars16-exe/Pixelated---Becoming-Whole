@@ -67,7 +67,7 @@ public class PlayerShoot : Singleton<PlayerShoot>
 
     private void sloMo()
     {
-        Time.timeScale = 0.3f;
+        Time.timeScale = 0.35f;
         aim.gameObject.SetActive(true);
     }
     private void NotsloMo()
