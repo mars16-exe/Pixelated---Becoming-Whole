@@ -71,6 +71,7 @@ MonoBehaviour:
   spinSpeed: 220
   followSpeed: 10
   attackPower: 35
+  range: 6.66
 --- !u!58 &5714057566889277997
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -80,7 +81,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 5714057566889277996}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8dcf186d0fef9424ca9bf5c641bfbc0d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -406,7 +407,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 2747690628134850419, guid: 16037dbd798344f57a526d53d48f5ead, type: 3}
   m_Color: {r: 0.05724919, g: 1, b: 0, a: 1}
   m_FlipX: 0

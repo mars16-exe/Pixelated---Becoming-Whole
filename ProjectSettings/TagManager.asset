@@ -9,6 +9,7 @@ TagManager:
   - dPad
   - Enemy
   - debug
+  - BulletCounter
   layers:
   - Default
   - TransparentFX
