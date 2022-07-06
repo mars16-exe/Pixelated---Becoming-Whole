@@ -84,6 +84,11 @@ public class PlayerShoot : Singleton<PlayerShoot>
                 Shoot();
                 NotsloMo();
             }
+            else if (touch.phase == TouchPhase.Ended && mouseOnUI)
+            {
+                Shoot();
+                NotsloMo();
+            }
         }
     }
 
