@@ -10,7 +10,7 @@ public class enemyGround : Enemy
     [SerializeField] protected float spinSpeed;
     [SerializeField] private float followSpeed = 0.4f;
     [SerializeField] private int attackPower = 40;
-    [SerializeField] private float range = 6.66f;
+
 
 
     private void Awake()
@@ -74,19 +74,7 @@ public class enemyGround : Enemy
         healthBar.gameObject.SetActive(false);
     }
 
-    private bool playerWithinRange()
-    {
-        float distance = Vector3.Distance(transform.position, PlayerShoot.Instance.transform.position);     //finding distance
 
-        if (distance <= range)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
 
     private void OnDrawGizmos()
     {

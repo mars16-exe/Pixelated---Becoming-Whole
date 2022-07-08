@@ -40,7 +40,7 @@ public class GunMechanics : MonoBehaviour
             gunLoaded = false;
         }
 
-        Fade();
+        ReloadFade();
     }
 
     private void Reload()
@@ -63,7 +63,7 @@ public class GunMechanics : MonoBehaviour
         gunLoaded = true;
     }
 
-    private void Fade()
+    private void ReloadFade()
     {
         if (gunLoaded)
         {
@@ -75,5 +75,17 @@ public class GunMechanics : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "ammoRevolver")
+        {
+            ammoPickup(9, collision.gameObject);
+        }
+    }
 
+    private void ammoPickup(int value, GameObject ammoCrate)
+    {
+        Destroy(ammoCrate.gameObject);
+        mag += value;
+    }
 }
