@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +10,10 @@ public class PlayerStats : Singleton<PlayerStats>
     public int Health
     {
         get { return health; }
-        set { health = value; }
+        set { health = value; 
+            if (health > 100)
+            { health = 100; } 
+            }
     }
 
     private int damage;
@@ -30,6 +31,20 @@ public class PlayerStats : Singleton<PlayerStats>
     public void TakeDamage(int value)
     {
         Health -= value;
+    }
+
+    public void Heal(int value)
+    {
+        Health += value;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Health" && Health != 100)
+        {
+            Heal(60);
+            Destroy(collision.gameObject);
+        }
     }
 
 }
