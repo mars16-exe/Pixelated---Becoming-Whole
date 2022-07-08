@@ -28,7 +28,7 @@ public class PlayerShoot : Singleton<PlayerShoot>
     void Update()
     {
         Aiming();
-        //MouseInput();
+        keyboardmouseInput();
     }
 
     private void Shoot()
@@ -92,18 +92,18 @@ public class PlayerShoot : Singleton<PlayerShoot>
         }
     }
 
-    private void MouseInput()                       //for MOUSE
+    private void keyboardmouseInput()                       //for MOUSE
     {
         Vector2 mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
         aim.transform.position = mousePosition;
 
         if (Input.GetButtonDown("Fire1") && !mouseOnUI)
         {
+            showGun();
             sloMo();
         }
-        else if (Input.GetButtonUp("Fire1") && !mouseOnUI)
+        if (Input.GetButtonUp("Fire1") && !mouseOnUI)
         {
-
             Shoot();
             NotsloMo();
         }

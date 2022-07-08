@@ -29,6 +29,8 @@ public class Enemy : MonoBehaviour
     {
         if (Health <= 0)
         {
+            RandomSpawner itemSpawner = GetComponent<RandomSpawner>();
+            itemSpawner.spawnAmmo();
             Destroy(gameObject);
         }
 

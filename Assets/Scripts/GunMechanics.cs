@@ -75,17 +75,19 @@ public class GunMechanics : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "ammoRevolver")
         {
-            ammoPickup(9, collision.gameObject);
+            ammoPickup(collision.gameObject);
         }
     }
 
-    private void ammoPickup(int value, GameObject ammoCrate)
+    private void ammoPickup(GameObject ammoCrate)
     {
+        ammo pickedAmmo = ammoCrate.gameObject.GetComponent<ammo>();
+        mag += pickedAmmo.value;
+
         Destroy(ammoCrate.gameObject);
-        mag += value;
     }
 }

@@ -18,6 +18,12 @@ public class PlayerController : MonoBehaviour
     {
         verticalMovement();
         horizontalMovement();
+
+#if UNITY_EDITOR
+        KeyboardandMouse();
+#endif
+
+
     }
 
     private void verticalMovement()
@@ -52,6 +58,27 @@ public class PlayerController : MonoBehaviour
             verticalInput = 0f;
             horizontalInput = 0f;
             rigidBody.velocity = Vector2.zero;
+        }
+    }
+
+    private void KeyboardandMouse()
+    {
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            upORdown(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            upORdown(-1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            rightORleft(-1);
+        }
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            rightORleft(1);
         }
     }
 }

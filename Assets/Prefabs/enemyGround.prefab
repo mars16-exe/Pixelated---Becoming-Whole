@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5714057566889277987}
   - component: {fileID: 5714057566889277985}
   - component: {fileID: 5714057566889277997}
+  - component: {fileID: 1997966164791961362}
   m_Layer: 0
   m_Name: enemyGround
   m_TagString: Enemy
@@ -68,10 +69,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48c76029c794a044bb28e40a1406016a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 6.66
   spinSpeed: 220
   followSpeed: 10
   attackPower: 35
-  range: 6.66
 --- !u!58 &5714057566889277997
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -88,6 +89,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1997966164791961362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5714057566889277996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52b2e897ae11bc149a20c8d92acff6d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: {fileID: 4564423327061309759, guid: f4687ccb294cf43428c70360f705e9ea, type: 3}
+  force: 4000
 --- !u!1 &5714057566952313702
 GameObject:
   m_ObjectHideFlags: 0
