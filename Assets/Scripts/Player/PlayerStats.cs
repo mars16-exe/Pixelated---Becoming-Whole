@@ -12,7 +12,11 @@ public class PlayerStats : Singleton<PlayerStats>
         get { return health; }
         set { health = value; 
             if (health > 100)
-            { health = 100; } 
+            { health = 100; }
+            else if(health < 0)
+            {
+                health = 0;
+            }
             }
     }
 

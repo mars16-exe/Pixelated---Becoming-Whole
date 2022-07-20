@@ -33,7 +33,7 @@ public class GunMechanics : MonoBehaviour
         {
             gunLoaded = false;
             Reload();
-            StartCoroutine(ReloadTime(1.8f));
+            StartCoroutine(ReloadTime(1.6f));
         }
         else if(ammo == 0 && mag == 0)
         {

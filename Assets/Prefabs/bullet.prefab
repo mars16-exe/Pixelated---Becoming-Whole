@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  power: 5000
+  power: 2500
 --- !u!1 &7776909824268147668
 GameObject:
   m_ObjectHideFlags: 0

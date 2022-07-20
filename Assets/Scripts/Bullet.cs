@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
 
 
     private Rigidbody2D rbBODY;
-    [SerializeField] private float power = 7000f;
+    [SerializeField] private float power = 2500f;
 
     private void Awake()
     {

@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private Rigidbody2D rigidBody;
 
+
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -16,16 +17,37 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SwipeControls();
+
         verticalMovement();
         horizontalMovement();
 
 #if UNITY_EDITOR
-        KeyboardandMouse();
+        //KeyboardandMouse();
 #endif
 
 
     }
 
+    private void SwipeControls()
+    {
+        if(swipeDetection.swipedUp)
+        {
+            upORdown(1);
+        }
+        if (swipeDetection.swipedDown)
+        {
+            upORdown(-1);
+        }
+        if (swipeDetection.swipedLeft)
+        {
+            rightORleft(-1);
+        }
+        if (swipeDetection.swipedRight)
+        {
+            rightORleft(1);
+        }
+    }
     private void verticalMovement()
     {
         transform.position = new Vector2(transform.position.x, transform.position.y + (verticalInput * speed * Time.deltaTime));
@@ -35,7 +57,7 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = new Vector2(transform.position.x + (horizontalInput * speed * Time.deltaTime), transform.position.y);
     }
-    public void upORdown(int value)    //setting Vertical Input
+    public void upORdown(int value)    //setting Vertical Input for UI
     {
         rigidBody.velocity = Vector2.zero;
 
@@ -43,7 +65,7 @@ public class PlayerController : MonoBehaviour
         verticalInput = value;
     }
 
-    public void rightORleft(int value)  //setting Horizontal Input
+    public void rightORleft(int value)  //setting Horizontal Input for UI
     {
         rigidBody.velocity = Vector2.zero;
 

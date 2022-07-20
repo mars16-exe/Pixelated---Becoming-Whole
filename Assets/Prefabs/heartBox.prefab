@@ -93,8 +93,8 @@ GameObject:
   - component: {fileID: 2277631361561190309}
   - component: {fileID: 2277631361561190306}
   - component: {fileID: 2277631361561190307}
-  - component: {fileID: 2277631361561190304}
   - component: {fileID: 2277631361561190305}
+  - component: {fileID: 8823512457601346630}
   m_Layer: 8
   m_Name: heartBox
   m_TagString: Health
@@ -194,21 +194,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.984375, y: 0.984375}
   m_EdgeRadius: 0
---- !u!114 &2277631361561190304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2277631361561190334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62a8a3d3e7355fc42a32896ec60afc00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 9
-  rank: 0
-  pickupSFX: {fileID: 8300000, guid: 1ebdfd5551a8693419b5c4fac6c28f3c, type: 3}
 --- !u!50 &2277631361561190305
 Rigidbody2D:
   serializedVersion: 4
@@ -230,3 +215,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8823512457601346630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2277631361561190334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea709d51d4793684ea85405d1058411a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupSFX: {fileID: 8300000, guid: f7d3f53684bc5914da66c6d9f421e78f, type: 3}

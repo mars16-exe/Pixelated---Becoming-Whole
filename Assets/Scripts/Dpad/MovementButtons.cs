@@ -7,11 +7,15 @@ public class MovementButtons : MonoBehaviour
     public void mouseYES()
     {
         PlayerShoot.Instance.mouseOnUI = true;
-        Invoke("mouseNO", 0.1f);
     }
     public void mouseNO()
     {
-        PlayerShoot.Instance.mouseOnUI = false;
+        PlayerShoot.Instance.mouseOnUI = true;
+        Invoke("falsify", 0.1f);
+    }
 
+    public void falsify()
+    {
+        PlayerShoot.Instance.mouseOnUI = false;
     }
 }

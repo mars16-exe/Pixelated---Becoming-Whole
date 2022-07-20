@@ -5,7 +5,7 @@ using UnityEngine;
 public class RandomSpawner : MonoBehaviour
 {
     public GameObject ammo;
-    public int force = 4;
+    public int force = 8000;
 
     public bool spawnAmmo()
     {
@@ -22,7 +22,7 @@ public class RandomSpawner : MonoBehaviour
                 Rigidbody2D ammoBody = ammo.GetComponent<Rigidbody2D>();
 
                 //pushing spawn bullets in multiple directions
-                ammoBody.velocity = new Vector2(0, force);
+                ammoBody.velocity = new Vector2(0, force * Time.deltaTime);
             }
 
         }

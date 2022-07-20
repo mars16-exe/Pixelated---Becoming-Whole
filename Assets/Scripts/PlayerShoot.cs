@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class PlayerShoot : Singleton<PlayerShoot>
 {
@@ -16,6 +13,9 @@ public class PlayerShoot : Singleton<PlayerShoot>
 
     public bool mouseOnUI;
 
+    [Header("For Debug - SLOWMOindicator")]
+    public SLOWMOindicator indicator;
+
     void Start()
     {
         cam = Camera.main;
@@ -27,13 +27,23 @@ public class PlayerShoot : Singleton<PlayerShoot>
     // Update is called once per frame
     void Update()
     {
-        Aiming();
-        keyboardmouseInput();
-    }
+        if(GameManager.Instance.currentControlState == 0)  //Dpad
+        {
+            Aiming();
+        }
+        else if(GameManager.Instance.currentControlState == 1) //swipe
+        {
+            Aim();
+        }
 
-    private void Shoot()
+
+#if UNITY_EDITOR
+        keyboardmouseInput();
+#endif
+    }
+    public void Shoot()
     {
-        if(ammoCounter.gunLoaded == true)
+        if(ammoCounter.gunLoaded == true && !mouseOnUI)
         {
             Instantiate(bullet, (Vector2)focalPoint.Instance.transform.position, focalPoint.Instance.transform.rotation);
             //deduct bullet count
@@ -43,11 +53,11 @@ public class PlayerShoot : Singleton<PlayerShoot>
             AudioSource.PlayClipAtPoint(gunshotClip, transform.position);
         }
     }
+
     private void showFire()
     {
         fire.gameObject.SetActive(true);
         Invoke("hideFire", 0.08f);
-        Invoke("hideGun", 1.2f);
     }
 
     private void hideFire()
@@ -55,16 +65,17 @@ public class PlayerShoot : Singleton<PlayerShoot>
         fire.gameObject.SetActive(false);
     }
 
-    private void showGun()
-    {
-        gun.SetActive(true);
-    }
 
-    private void hideGun()
+    private void Aim()
     {
-        gun.SetActive(false);
-    }
+        if(Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            Vector2 aimPosition = cam.ScreenToWorldPoint(touch.position);
+            aim.transform.position = aimPosition;
+        }
 
+    }
 
     private void Aiming()                           //for TOUCH
     {
@@ -76,7 +87,6 @@ public class PlayerShoot : Singleton<PlayerShoot>
             
             if(touch.phase == TouchPhase.Began && !mouseOnUI)
             {
-                showGun();
                 sloMo();
             }
             else if(touch.phase == TouchPhase.Ended && !mouseOnUI)
@@ -84,11 +94,11 @@ public class PlayerShoot : Singleton<PlayerShoot>
                 Shoot();
                 NotsloMo();
             }
-            else if (touch.phase == TouchPhase.Ended && mouseOnUI)
-            {
-                Shoot();
-                NotsloMo();
-            }
+            //else if (touch.phase == TouchPhase.Ended && mouseOnUI)
+            //{
+            //    Shoot();
+            //    NotsloMo();
+            //}
         }
     }
 
@@ -99,22 +109,20 @@ public class PlayerShoot : Singleton<PlayerShoot>
 
         if (Input.GetButtonDown("Fire1") && !mouseOnUI)
         {
-            showGun();
-            sloMo();
+            indicator.gameObject.SetActive(true);
         }
         if (Input.GetButtonUp("Fire1") && !mouseOnUI)
         {
             Shoot();
-            NotsloMo();
         }
     }
 
-    private void sloMo()
+    public void sloMo()
     {
         Time.timeScale = 0.35f;
         aim.gameObject.SetActive(true);
     }
-    private void NotsloMo()
+    public void NotsloMo()
     {
         Time.timeScale = 1.0f;
         aim.gameObject.SetActive(false);

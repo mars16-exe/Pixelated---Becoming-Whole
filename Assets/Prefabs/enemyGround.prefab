@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammo: {fileID: 4564423327061309759, guid: f4687ccb294cf43428c70360f705e9ea, type: 3}
-  force: 4000
+  force: 8000
 --- !u!1 &5714057566952313702
 GameObject:
   m_ObjectHideFlags: 0
