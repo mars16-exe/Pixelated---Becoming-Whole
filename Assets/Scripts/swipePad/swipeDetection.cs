@@ -45,7 +45,10 @@ public class swipeDetection : MonoBehaviour
 
 	public void Update()
     {
-        Swipe();
+        if(!PlayerShoot.Instance.mouseOnUI)
+        {
+            Swipe();
+        }
     }
 
     private void Swipe()
