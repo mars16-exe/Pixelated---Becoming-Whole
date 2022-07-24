@@ -11,7 +11,8 @@ public class enemyTurrent : Enemy
         {
             if(this.transform.rotation.z < 90 && this.transform.rotation.z > -90)
             {
-                transform.LookAt(PlayerShoot.Instance.gameObject.transform.position);
+                transform.LookAt(-PlayerShoot.Instance.gameObject.transform.position);
+
                 Attack();
             }
 

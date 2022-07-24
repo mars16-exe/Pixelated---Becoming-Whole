@@ -5,22 +5,12 @@ public class pauseHandler : MonoBehaviour
 {
     public GameObject pauseUI;
 
-    private bool isPaused;
-
     public void PauseDo()
     {
         if(pauseUI.activeSelf == false)
         {
             pauseUI.SetActive(true);
-            isPaused = true;
-        }
-    }
-
-    private void Update()
-    {
-        if(isPaused)
-        {
-            Time.timeScale = 0f;
+            Time.timeScale = 0;
         }
     }
 
@@ -29,7 +19,7 @@ public class pauseHandler : MonoBehaviour
         if(pauseUI.activeSelf == true)
         {
             pauseUI.SetActive(false);
-            isPaused = false;
+            Time.timeScale = 1;
         }
     }
 

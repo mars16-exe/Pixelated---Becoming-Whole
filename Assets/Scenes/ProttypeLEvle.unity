@@ -880,7 +880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &124212685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1741,7 +1741,7 @@ MonoBehaviour:
   swipeDetector: {fileID: 1152415468}
   inputField: {fileID: 938103953}
   slider: {fileID: 1850589826}
-  minSwipeDis: 0.14
+  minSwipeDis: 0.91
 --- !u!4 &287889395 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5714057566889277986, guid: ded344617b7e1874b95e7ad6cb613238, type: 3}
@@ -4216,13 +4216,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962728974}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.32126224, z: 0}
-  m_LocalScale: {x: 0.24565853, y: 0.9276921, z: 0.16998002}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -2.97, z: 0}
+  m_LocalScale: {x: 1, y: 4.3107066, z: 1}
   m_Children: []
   m_Father: {fileID: 1723672246}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!212 &962728976
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4748,7 +4748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520d2f1393c110441870f8d94b67d959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MIN_SWIPE_DISTANCE: 0.14
+  MIN_SWIPE_DISTANCE: 0.91
   debugWithArrowKeys: 1
   indicator: {fileID: 1055291722}
 --- !u!1 &1185982867
@@ -6960,7 +6960,7 @@ Transform:
   m_GameObject: {fileID: 1723672245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.8830447, y: 5.8830447, z: 5.8830447}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 962728975}
   m_Father: {fileID: 124212687}
